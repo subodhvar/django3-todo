@@ -16,6 +16,7 @@
             <div class="list-group">
                 {% for todo in todos %}
                     <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}</a>
+                    <font size=2 face="Helvetica" color=orange><i> <u>Created on:</u> {{ todo.created}}</i></font>
                 {% endfor %}
             </div>
         {% else %}
